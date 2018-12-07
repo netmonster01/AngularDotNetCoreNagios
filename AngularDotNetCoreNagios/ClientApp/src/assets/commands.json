@@ -1,0 +1,47 @@
+{
+  "format_version": 0,
+  "result": {
+    "query_time": 1544134187000,
+    "cgi": "objectjson.cgi",
+    "user": "nagiosadmin",
+    "query": "commandlist",
+    "query_status": "released",
+    "program_start": 1544036202000,
+    "last_data_update": 1544036202000,
+    "type_code": 0,
+    "type_text": "Success",
+    "message": ""
+  },
+  "data": {
+    "selectors": {
+
+    },
+    "commandlist": [
+      "check-host-alive",
+      "check_dhcp",
+      "check_ftp",
+      "check_hpjd",
+      "check_http",
+      "check_imap",
+      "check_local_disk",
+      "check_local_load",
+      "check_local_mrtgtraf",
+      "check_local_procs",
+      "check_local_swap",
+      "check_local_users",
+      "check_nrpe",
+      "check_nt",
+      "check_ping",
+      "check_pop",
+      "check_smtp",
+      "check_snmp",
+      "check_ssh",
+      "check_tcp",
+      "check_udp",
+      "notify-host-by-email",
+      "notify-service-by-email",
+      "process-host-perfdata",
+      "process-service-perfdata"
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>Tactical Overview</h1>
+  <div *ngIf="hostCounts">
+    <div class="row">
+      <div class="col-sm-2 services row-div">Hosts</div>
+      <div class="col-sm-2 ok text-center row-div">{{ hostCounts.up }}</div>
+      <div class="col-sm-2 critical text-center row-div">{{ hostCounts.down }}</div>
+      <div class="col-sm-2 unknown text-center row-div">{{ hostCounts.unreachable }}</div>
+      <div class="col-sm-2 pending text-center row-div">{{ hostCounts.pending }}</div>
+      <div class="col-sm-2 services row-div"> &nbsp;</div>
+    </div>
+  </div>
+  <div *ngIf="serviceCounts">
+    <div class="row">
+      <div class="col-sm-2 services row-div">Services</div>
+      <div class="col-sm-2 ok text-center row-div">{{ serviceCounts.ok }}</div>
+      <div class="col-sm-2 warning text-center row-div">{{ serviceCounts.warning }}</div>
+      <div class="col-sm-2 critical text-center row-div">{{ serviceCounts.critical }}</div>
+      <div class="col-sm-2 unknown text-center row-div">{{ serviceCounts.unknown }}</div>
+      <div class="col-sm-2 pending text-center row-div">{{ serviceCounts.pending }}</div>
+    </div>
+  </div>
+  <mat-spinner style="margin:0 auto;" *ngIf="isLoadingServices || isLoadingHosts"></mat-spinner>
+</div>

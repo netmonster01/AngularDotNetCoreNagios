@@ -1,0 +1,24 @@
+<div class="row"  (click)="showDetails(currentHost)">
+  <div class="col-sm-3 row-div" [class.status-up]="currentHost.status == 2" [class.status-down]="currentHost.status == 4" >
+    {{currentHost.name}}
+  </div>
+  <div class="d-none d-sm-block col-sm-1 row-div status-up text-center">
+      {{currentHost.servicePassCount}}
+  </div>
+  <div class="d-none d-sm-block col-sm-1 row-div status-down text-center">
+      {{currentHost.serviceFailCount}}
+  </div>
+  <div class="d-none d-sm-block col-sm-2 row-div row-bg">
+      {{currentHost.last_check | date:'short' }}
+  </div>
+  <div class="d-none d-sm-block col-sm-5 row-div row-bg">
+      {{currentHost.plugin_output}}
+  </div>
+</div>
+<div class="row" *ngIf="currentHost.showDetails">
+    <div class="col-sm-12">
+      <div *ngFor="let service of currentHost.services; let i = index">
+        <app-service [service]="service" [index]="i"></app-service>
+        </div>
+  </div>
+</div>

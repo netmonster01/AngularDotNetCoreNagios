@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>Dashboard</h1>
+      <app-charts [servicecounts]="serviceCounts" [hostcounts]="hostCounts"></app-charts>
+    </div>
+  </div>
+</div>
+<mat-spinner style="margin:0 auto;" *ngIf="isLoadingServices || isLoadingHosts"></mat-spinner>
+
