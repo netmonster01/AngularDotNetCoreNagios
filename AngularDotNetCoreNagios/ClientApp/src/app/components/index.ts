@@ -7,3 +7,5 @@ export * from './dashboard/dashboard.component';
 export * from './tactical-overview/tactical-overview.component';
 export * from './charts/charts.component'
 export * from './forms/hosts/add-host/add-host.component';
+export * from './configuration/contact-groups/contact-groups.component';
+export * from './configuration/configuration.component';

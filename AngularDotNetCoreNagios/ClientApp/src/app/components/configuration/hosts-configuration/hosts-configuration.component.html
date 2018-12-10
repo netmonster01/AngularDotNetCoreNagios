@@ -1,0 +1,45 @@
+<div class="container" style="background-color:#ffffff">
+  <h2>Hosts</h2>
+  <div class="row odd">
+    <div class="col-xs-12 col-sm-12">
+      <div class="row">
+        <div class="col-sm-2">
+          <span class="tblHeader">Host Name</span>
+        </div>
+        <div class="col-xs-4 col-sm-3">
+          <span class="tblHeader">Alias:</span>
+        </div>
+        <div class="col-xs-4 col-sm-2">
+          <span class="tblHeader">Ip Address:</span>
+        </div>
+        <div class="col-xs-4 col-sm-5">
+          <button class="btn btn-outline-success fa fa-plus pull-right" title="Add New Host" (click)="openDialog()"></button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="row p-3" *ngFor="let host of hostList;  let odd=odd; let even=even" [ngClass]="{ odd: odd, even: even}">
+    <div class="col-xs-12 col-sm-12">
+      <div class="row">
+        <div class="col-sm-2">
+          {{host.hostName}}
+        </div>
+        <div class="col-xs-4 col-sm-3">
+          {{host.alias}}
+        </div>
+        <div class="col-xs-4 col-sm-2">
+          {{host.ipAddress}}
+        </div>
+        <div class="col-xs-4 col-sm-5">
+          <button class="btn btn-outline-secondary fa fa-pencil"></button>
+
+          <button class="btn btn-outline-danger fa fa-trash"></button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="row">&nbsp;</div>
+</div>
+

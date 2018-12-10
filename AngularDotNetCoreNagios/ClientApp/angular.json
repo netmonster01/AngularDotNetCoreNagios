@@ -49,6 +49,11 @@
                 "glob": "commands.json",
                 "input": "./",
                 "output": "./assets/"
+              },
+              {
+                "glob": "contactList.json",
+                "input": "./",
+                "output": "./assets/"
               }
             ],
             "styles": [

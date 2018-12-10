@@ -1,0 +1,24 @@
+{
+  "format_version": 0,
+  "result": {
+    "query_time": 1544223012000,
+    "cgi": "objectjson.cgi",
+    "user": "nagiosadmin",
+    "query": "contactlist",
+    "query_status": "released",
+    "program_start": 1544222387000,
+    "last_data_update": 1544222387000,
+    "type_code": 0,
+    "type_text": "Success",
+    "message": ""
+  },
+  "data": {
+    "selectors": {
+      
+    },
+    "contactlist": [
+      "nagiosadmin",
+      "raspiadmin"
+    ]
+  }
+}

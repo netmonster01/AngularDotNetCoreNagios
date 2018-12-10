@@ -112,6 +112,20 @@ export class NagiosService {
     //return this.http.get<any>('/nagios/cgi-bin/objectjson.cgi?query=commandlist',
     //  this.httpOptions).catch(this.handleError);
   }
+
+  getHostGroups() {
+    return this.http.get<any>('/assets/hostGroupList.json',
+      this.httpOptions).catch(this.handleError);
+    //return this.http.get<any>('/nagios/cgi-bin/objectjson.cgi?query=hostgrouplist',
+    //  this.httpOptions).catch(this.handleError);
+  }
+
+  getContactList() {
+    return this.http.get<any>('/assets/contactList.json',
+      this.httpOptions).catch(this.handleError);
+    //return this.http.get<any>('/nagios/cgi-bin/objectjson.cgi?query=contactlist',
+    //  this.httpOptions).catch(this.handleError);
+  }
   handleError(handleError: any): any {
     console.log(handleError);
   }

@@ -18,6 +18,17 @@
           <input matInput placeholder="IP Address" formControlName="ipAddress" />
         </mat-form-field>
       </div>
+      <div class="form-group">
+        <h3>Host Groups</h3>
+        <dual-list [source]="hostGroups" [(destination)]="selectedHostGroups"></dual-list>
+      </div>
+      <div class="form-group">
+        <h3>Contact Groups</h3>
+        <dual-list [source]="contactGroups" [(destination)]="selectedContactGroups" [display]="_groupName"></dual-list>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary">Submit</button>
+      </div>
     </form>
 
   </div>

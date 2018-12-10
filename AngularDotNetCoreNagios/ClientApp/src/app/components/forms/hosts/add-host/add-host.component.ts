@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NagiosService } from '../../../../services/';
+import { ContactGroup } from '../../../../models';
 
 @Component({
   selector: 'app-add-host',
@@ -9,16 +11,35 @@ import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 export class AddHostComponent implements OnInit {
 
   addForm: FormGroup;
-
-  constructor(private fb: FormBuilder) { }
+  hostGroups: string[] = [];
+  selectedHostGroups: string[] = [];
+  contactGroups: string[] = [];
+  selectedContactGroups: string[] = [];
+  constructor(private fb: FormBuilder, private nagios: NagiosService) { }
    
   ngOnInit() {
     this.addForm = this.fb.group({
       hostName: ['', Validators.required],
       alias: ['', Validators.required],
       ipAddress: ['', Validators.required],
-      serverGroup: [''],
+      hostGroup: ['None', Validators.required]
     });
+
+    this.getHostsGroups();
+    this.getContactGroups();
+  }
+
+  getHostsGroups(): any {
+    this.nagios.getHostGroups().subscribe((hostGoups: any) => { this.hostGroups = hostGoups.data.hostgrouplist; });
+  }
+
+  getContactGroups(): any {
+    this.nagios.getContactList().subscribe((contactGroups: any) => this.processGroups(contactGroups.data.contactlist));
+  }
+
+  processGroups(contactGroups: any): void {
+    console.log(contactGroups);
+    this.contactGroups = contactGroups;
   }
 
 }

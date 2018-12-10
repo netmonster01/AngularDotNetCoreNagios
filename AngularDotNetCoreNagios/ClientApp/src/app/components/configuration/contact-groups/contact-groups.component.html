@@ -1,0 +1,45 @@
+<div class="container" style="background-color:#ffffff">
+    <h2>Contact Groups</h2>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12">
+        <div class="row">
+          <div class="col-sm-2">
+            <span class="tblHeader">Group Name</span>
+          </div>
+          <div class="col-xs-4 col-sm-3">
+            <span class="tblHeader">Alias:</span>
+          </div>
+          <div class="col-xs-4 col-sm-2">
+            <span class="tblHeader">Members:</span>
+          </div>
+          <div class="col-xs-4 col-sm-5">
+            <button class="btn btn-outline-success fa fa-plus pull-right" title="Add New Contact Group" (click)="openDialog()"></button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="row p-3" *ngFor="let group of contactGroups;  let odd=odd; let even=even" [ngClass]="{ odd: odd, even: even}">
+      <div class="col-xs-12 col-sm-12">
+        <div class="row">
+          <div class="col-sm-2">
+            {{group.groupName}}
+          </div>
+          <div class="col-xs-4 col-sm-3">
+            {{group.alias}}
+          </div>
+          <div class="col-xs-4 col-sm-2">
+            {{group.members}}
+          </div>
+          <div class="col-xs-4 col-sm-5">
+            <button class="btn btn-outline-secondary fa fa-pencil"></button>
+
+            <button class="btn btn-outline-danger fa fa-trash"></button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="row">&nbsp;</div>
+</div>
+

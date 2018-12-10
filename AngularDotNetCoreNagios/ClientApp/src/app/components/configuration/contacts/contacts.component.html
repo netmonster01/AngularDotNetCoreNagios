@@ -1,0 +1,52 @@
+
+<span (click)="viewContacts()"> View Contacts</span>
+ 
+<div *ngIf="showContacts">
+  <h2>Contacts</h2>
+  <div class="container" style="background-color:#ffffff">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12">
+        <div class="row">
+          <div class="col-sm-2">
+            <span class="tblHeader">Name</span>
+          </div>
+          <div class="col-xs-4 col-sm-3">
+            <span class="tblHeader">Alias:</span>
+          </div>
+          <div class="col-xs-4 col-sm-2">
+            <span class="tblHeader">Email Address:</span>
+          </div>
+          <div class="col-xs-4 col-sm-5">
+            <button class="btn btn-outline-success fa fa-plus pull-right" title="Add New User" (click)="openDialog()"></button>
+          </div>
+         
+        </div>
+      </div>
+    </div>
+    <div class="row p-3" *ngFor="let contact of contacts;  let odd=odd; let even=even" [ngClass]="{ odd: odd, even: even}">
+      <div class="col-xs-12 col-sm-12">
+        <div class="row">
+          <div class="col-sm-2">
+            {{contact.name}}
+          </div>
+          <div class="col-xs-4 col-sm-3">
+            {{contact.alias}}
+          </div>
+          <div class="col-xs-4 col-sm-2">
+            {{contact.emailAddress}}
+          </div>
+          <div class="col-xs-4 col-sm-5">
+            <button class="btn btn-outline-secondary fa fa-pencil"></button>
+ 
+            <button class="btn btn-outline-danger fa fa-trash"></button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="row">&nbsp;</div>
+  </div>
+</div>
+
+
+
